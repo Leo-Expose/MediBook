@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MediBook - Appointment System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>MediBook - Book Appointment</h1>
+
+    <div class="form-container">
+        <input type="text" id="patientName" placeholder="Your Name">
+        
+        <select id="doctorName">
+            <option value="">Select Doctor</option>
+            <option value="Dr. Smith">Dr. Smith - Cardiologist</option>
+            <option value="Dr. Johnson">Dr. Johnson - Dentist</option>
+            <option value="Dr. Lee">Dr. Lee - Dermatologist</option>
+        </select>
+
+        <input type="date" id="date">
+        <input type="time" id="time">
+
+        <button onclick="bookAppointment()">Book Appointment</button>
+    </div>
+
+    <h2>All Appointments</h2>
+    <div id="appointmentsList"></div>
+
+<script src="script.js"></script>
+</body>
+</html> 
