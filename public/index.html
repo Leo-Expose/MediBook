@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediBook — Book Your Appointment</title>
+    <meta name="description" content="MediBook – Book doctor appointments online quickly and easily. Choose your doctor, pick a time, and get instant confirmation.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <span class="logo-icon">🩺</span>
+                <span class="logo-text">Medi<span class="logo-accent">Book</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="#book" class="nav-link">Book Now</a>
+                <a href="#appointments" class="nav-link">Appointments</a>
+                <a href="admin.html" class="nav-link nav-admin">Admin Panel</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Your Health,<br>
+                <span class="gradient-text">Our Priority</span>
+            </h1>
+            <p class="hero-subtitle">
+                Book appointments with top specialists in seconds. 
+                No waiting, no hassle — just quality healthcare at your fingertips.
+            </p>
+            <a href="#book" class="hero-cta">
+                Book Appointment
+                <span class="cta-arrow">→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="section" id="book">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Book an <span class="gradient-text">Appointment</span></h2>
+                <p class="section-desc">Fill in your details below and we'll confirm your booking instantly.</p>
+            </div>
+
+            <div class="booking-card" id="bookingCard">
+                <div class="form-group">
+                    <label for="patientName" class="form-label">Your Name</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">👤</span>
+                        <input type="text" id="patientName" class="form-input" placeholder="Enter your full name" autocomplete="name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="doctorName" class="form-label">Select Doctor</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">🩺</span>
+                        <select id="doctorName" class="form-input form-select">
+                            <option value="">Choose a specialist</option>
+                            <option value="Dr. Smith">Dr. Smith — Cardiologist</option>
+                            <option value="Dr. Johnson">Dr. Johnson — Dentist</option>
+                            <option value="Dr. Lee">Dr. Lee — Dermatologist</option>
+                            <option value="Dr. Patel">Dr. Patel — Neurologist</option>
+                            <option value="Dr. Garcia">Dr. Garcia — Pediatrician</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date" class="form-label">Date</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">📅</span>
+                            <input type="date" id="date" class="form-input">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="time" class="form-label">Time</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🕐</span>
+                            <input type="time" id="time" class="form-input">
+                        </div>
+                    </div>
+                </div>
+
+                <button id="bookBtn" class="btn btn-primary btn-full" onclick="bookAppointment()">
+                    <span class="btn-text">Book Appointment</span>
+                    <span class="btn-loader" style="display:none;"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Appointments Section -->
+    <section class="section section-dark" id="appointments">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Upcoming <span class="gradient-text">Appointments</span></h2>
+                <p class="section-desc">Your scheduled appointments at a glance.</p>
+            </div>
+
+            <div id="appointmentsList" class="appointments-grid">
+                <!-- Cards injected by JS -->
+            </div>
+            <div id="emptyState" class="empty-state" style="display:none;">
+                <div class="empty-icon">📋</div>
+                <h3>No Appointments Yet</h3>
+                <p>Book your first appointment above to get started!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 MediBook. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Toast Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
